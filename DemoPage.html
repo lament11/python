@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 기술 학습 페이지</title>
+    <style>
+        /* CSS 스타일 영역 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            transition: color 0.3s;
+        }
+
+        h1:hover {
+            color: #007bff;
+        }
+
+        .color-box {
+            width: 100px;
+            height: 100px;
+            background-color: #007bff;
+            margin: 20px auto;
+            transition: transform 0.3s;
+        }
+
+        .color-box:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #counter {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>웹 기술 학습 페이지</h1>
+        <div class="color-box"></div>
+        <button id="changeColorBtn">색상 변경</button>
+        <div id="counter">0</div>
+        <button id="countBtn">카운트 증가</button>
+    </div>
+
+    <script>
+        // JavaScript 코드 영역
+        let count = 0;
+        const colors = ['#007bff', '#28a745', '#dc3545', '#ffc107', '#17a2b8'];
+        let colorIndex = 0;
+
+        // 색상 변경 버튼 이벤트
+        document.getElementById('changeColorBtn').addEventListener('click', function() {
+            const colorBox = document.querySelector('.color-box');
+            colorIndex = (colorIndex + 1) % colors.length;
+            colorBox.style.backgroundColor = colors[colorIndex];
+        });
+
+        // 카운트 증가 버튼 이벤트
+        document.getElementById('countBtn').addEventListener('click', function() {
+            count++;
+            document.getElementById('counter').textContent = count;
+        });
+
+        // 제목에 마우스를 올렸을 때 콘솔에 메시지 출력
+        document.querySelector('h1').addEventListener('mouseover', function() {
+            console.log('제목에 마우스를 올렸습니다!');
+        });
+    </script>
+</body>
+</html>
