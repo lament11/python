@@ -12,7 +12,7 @@ class Form(QMainWindow):
 
     def setupUI(self):
         #창의 시작위치와 폭, 높이(x,y,width,height) 
-        self.setGeometry(200, 200, 800, 800)
+        self.setGeometry(200, 200, 700, 600)
         
         #입력 텍스트 
         self.lineEdit = QLineEdit("", self)
@@ -29,8 +29,8 @@ class Form(QMainWindow):
         self.tableWidget.setRowCount(50)  #행의 갯수 
         self.tableWidget.setColumnCount(2)  #컬럼의 갯수 
         #컬럼의 폭을 지정한다. 0번 1번 
-        self.tableWidget.setColumnWidth(0, 300)
-        self.tableWidget.setColumnWidth(1, 300)
+        self.tableWidget.setColumnWidth(0, 400)
+        self.tableWidget.setColumnWidth(1, 200)
         
         #self.setTableWidgetData()
         self.tableWidget.doubleClicked.connect(self.doubleClicked)
