@@ -4,7 +4,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic   
 
-#디자인 파일을 로딩
+#디자인 파일을 로딩(슬라이싱 문법)
 form_class = uic.loadUiType("DemoForm.ui")[0]
 
 #윈도우 클래스 정의(처음에는 QDialog 상속, 다중상속)
